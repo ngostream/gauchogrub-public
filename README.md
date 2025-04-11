@@ -68,7 +68,7 @@ API_KEY=your-ucsb-api-key
 
 ### Frontend Setup
 ```bash
-cd frontend
+cd client
 pnpm install
 pnpm run dev
 ```
