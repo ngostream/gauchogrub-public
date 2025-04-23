@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="assets/logo.png" alt="GauchoGrubz Logo" width="160"/>
+  <img src="assets/logo.png" alt="GauchoGrubz Logo" width="200"/>
 </p>
 
-<h1 align="center">🍽️ GauchoGrubz</h1>
+<h1 align="center">GauchoGrubz</h1>
 
 GauchoGrubz is a full-stack web application that allows UCSB students to view real-time dining hall menus and submit reviews for specific menu items. Built to enhance student dining experiences by combining live data with crowd-sourced feedback.
 
