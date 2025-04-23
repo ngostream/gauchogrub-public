@@ -1,12 +1,14 @@
 body{
   /* background-color: rgb(15, 60, 103); maybe use for shadow instead?*/
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding-bottom: 3rem;
   text-align: center;
 }
 
@@ -57,4 +59,14 @@ body{
   padding: 5px; 
   box-shadow: 0px 0px 0px transparent; 
   z-index: 1;
+}
+.flexCenter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexLeft{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

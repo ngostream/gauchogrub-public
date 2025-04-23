@@ -3,7 +3,6 @@ import {Link} from "react-router-dom"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import "./HallCard.css"
 import "../App.css"
 // https://stackoverflow.com/questions/50074276/how-to-import-two-component-but-same-name-from-two-libraries
 
@@ -31,12 +30,16 @@ export default function HallCard({hN}) {
     <Link to ={`/${encodeURIComponent(hN)}`}>
     <Card sx={{ maxWidth: 600 }} className = "hover-effect"> {/* change hover shadow color?*/}
       <CardContent>
-        <h5>
+        <h5 style={{
+          fontSize: "20px",
+          fontWeight: "600",
+          letterSpacing: "0.5px",
+        }}>
             {hN}
         </h5>
       </CardContent>
       <CardMedia
-        sx={{ height: 225,
+        sx={{ height: 220,
             borderRadius: '4px'
          }}
         image= {image}

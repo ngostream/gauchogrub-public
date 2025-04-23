@@ -6,7 +6,7 @@ import json
 import sqlite3
 import os
 from dotenv import load_dotenv
-load_dotenv("server/.env.prod")
+load_dotenv(".env.prod")
 API_KEY = os.getenv("API_KEY")
 date = str(datetime.datetime.now())
 date = date[0:10]
@@ -69,7 +69,8 @@ def menu():
 
 @app.route("/<dining_hall>/<item_id>", methods = ["POST", "GET"])
 def submit(dining_hall, item_id):
-    conn = sqlite3.connect("server/dining_menu.db")
+    item_id = item_id.replace("__slash__","/")
+    conn = sqlite3.connect("dining_menu.db")
     cursor = conn.cursor()
 
     cursor.execute("SELECT id FROM Menu_Items WHERE name = ? AND dining_hall = ?", (item_id, dining_hall))
@@ -91,17 +92,18 @@ def submit(dining_hall, item_id):
             (menu_item_id, rating ,review_text)
         )
         conn.commit()
-    
+    # grab the rating, comment, and reviews that match the menu item. defaults to descending based on most recent date
     cursor.execute(
         """
-        SELECT r.rating, r.comment
+        SELECT r.rating, r.comment, r.created_at
         FROM Reviews r
         JOIN Menu_Items m ON r.menu_item_id = m.id
         WHERE m.id = ? AND m.dining_hall = ?
+        ORDER BY r.created_at DESC
         """,
         (menu_item_id, dining_hall),
     )
-    reviews = [{"rating": row[0], "comment": row[1]} for row in cursor.fetchall()]
+    reviews = [{"rating": row[0], "comment": row[1], "created_at": row[2]} for row in cursor.fetchall()]
     conn.close()
 
     if reviews:
@@ -109,7 +111,7 @@ def submit(dining_hall, item_id):
     else:
         avg_rating = 0
     
-    return jsonify({"message": "received", "avg_rating": avg_rating, "reviews": reviews}), 200
+    return jsonify({"message": "received", "avg_rating": avg_rating, "reviews": reviews,}), 200
     
 if __name__ == "__main__":
     app.run(host = "0.0.0.0", port = 5000, debug=True)
