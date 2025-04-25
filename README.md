@@ -4,7 +4,7 @@
 
 <h1 align="center">GauchoGrubz</h1>
 
-GauchoGrubz is a full-stack web application that allows UCSB students to view real-time dining hall menus and submit reviews for specific menu items. Built to enhance student dining experiences by combining live data with crowd-sourced feedback.
+GauchoGrubz is a full-stack web application that allows UCSB students to view real-time dining hall menus and submit reviews for specific menu items. Built by Nathan Ngo and Alvin Lee as a collaborative project at UCSB to enhance student dining experiences by combining live data with crowd-sourced feedback.
 
 ## Features
 
@@ -67,3 +67,8 @@ Reviews Table:
 
 ### Review Display – See What Others Said
 ![Reviews Display](assets/review-view.png)
+
+## Contributors
+
+- [Nathan Ngo](https://github.com/ngostream)
+- [Alvin Lee](https://github.com/nitron532)
