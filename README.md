@@ -19,7 +19,7 @@ GauchoGrubz is a full-stack web application that allows UCSB students to view re
 ## Technologies Used
 
 **Frontend**:
-- React, React Router, Axios, React Bootstrap, Material UI
+- React (JSX), React Router, Axios, React Bootstrap, Material UI
 - Vite for fast builds and local development
 
 **Backend**:
